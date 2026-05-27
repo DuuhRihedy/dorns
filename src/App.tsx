@@ -75,6 +75,10 @@ const translations = {
     project_keys_desc: "E-commerce de jogos digitais robusto e otimizado com rotas NestJS e modelagem Prisma, escalado para milhares de acessos.",
     project_blocksmith_desc: "Editor modular de texto rico para Web focado em alta performance de renderização e cache IndexedDB offline.",
     project_attento_desc: "Website institucional otimizado para o setor de saúde do trabalho, com excelentes índices de velocidade e pontuação SEO.",
+    project_canela_desc: "Website de alta performance para a cafeteria e empório Canela Café. Apresenta uma experiência premium com transições fluidas.",
+    project_lepaiper_desc: "Sistema interno desenvolvido para o gerenciamento da Papelaria Lê Paiper, focado em otimizar os processos e fluxos do negócio.",
+    project_etarp_desc: "Grupo Etarp — Do rótulo na linha de produção ao sistema que governa sua operação. Etiquetas, automação comercial, equipamentos e software sob medida.",
+    project_soon_desc: "Dorns Tracking Hub — Centralização de rastreamento avançado (GTM/Meta Pixel) com roteamento inteligente de pixels em tempo real para múltiplos e-commerces.",
     project_cta_live: "Ver Projeto",
     project_cta_quote: "Solicitar Orçamento",
 
@@ -95,8 +99,7 @@ const translations = {
 
     // Footer
     footer_rights: "Todos os direitos reservados.",
-    footer_developed: "Feito com",
-    footer_developed_by: "pela equipe Dorns Tech"
+    footer_signature: "Dorns Tech Solutions — Engenharia de Software Especializada"
   },
   en: {
     // Navigation
@@ -164,6 +167,10 @@ const translations = {
     project_keys_desc: "Scalable digital game e-commerce optimized with high-performance NestJS routes and Prisma models.",
     project_blocksmith_desc: "A modular rich-text editor for Web focusing on high rendering performance and offline IndexedDB caching.",
     project_attento_desc: "Institutional website optimized for occupational health, scoring high on web vitals and SEO performance.",
+    project_canela_desc: "High-performance website for Canela Café and market, presenting a premium experience with fluid animations.",
+    project_lepaiper_desc: "Internal management system developed for Lê Paiper Bookstore, focused on optimizing core business workflows.",
+    project_etarp_desc: "Grupo Etarp — From production line labels to the system that governs your operations. Custom labels, commercial automation, hardware, and software.",
+    project_soon_desc: "Dorns Tracking Hub — Centralized advanced tracking (GTM/Meta Pixel) with real-time smart pixel routing for multiple e-commerce platforms.",
     project_cta_live: "View Project",
     project_cta_quote: "Request Quote",
 
@@ -184,8 +191,7 @@ const translations = {
 
     // Footer
     footer_rights: "All rights reserved.",
-    footer_developed: "Made with",
-    footer_developed_by: "by Dorns Tech team"
+    footer_signature: "Dorns Tech Solutions — Specialized Software Engineering"
   }
 };
 

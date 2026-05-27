@@ -1,5 +1,12 @@
 import React from 'react';
-import { ExternalLink, Layers, ArrowRight } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
+import hubRpg from '../assets/hub_rpg.png';
+import keys4play from '../assets/key4playEdit.png';
+import attento from '../assets/attentoEdit.png';
+import canelaCafe from '../assets/canelacafe.jpg';
+import lepaiper from '../assets/lepaiper.png';
+import soonImg from '../assets/soon.jpg';
+import etarp from '../assets/etarp.png';
 
 interface ProjectsProps {
   t: (key: string) => string;
@@ -10,30 +17,60 @@ export const Projects: React.FC<ProjectsProps> = ({ t }) => {
     {
       title: 'Velkryon VTT',
       descKey: 'project_velkryon_desc',
+      image: hubRpg,
       tags: ['Next.js 15', 'React 19', 'TypeScript', 'PostgreSQL', 'Prisma'],
       link: 'https://velkryon.com.br',
       accent: 'var(--accent-primary)'
     },
+
     {
-      title: 'Keys4Play Digital Store',
+      title: 'E-commerce Keys4Play',
       descKey: 'project_keys_desc',
-      tags: ['React', 'NestJS', 'TypeScript', 'Prisma ORM', 'REST API'],
+      image: keys4play,
+      tags: ['React', 'NestJS', 'TypeScript', 'Prisma ORM', 'SQL'],
       link: 'https://key4play.com',
-      accent: 'var(--accent-secondary)'
-    },
-    {
-      title: 'Blocksmith Rich Text Editor',
-      descKey: 'project_blocksmith_desc',
-      tags: ['Vite', 'React', 'Tiptap', 'IndexedDB', 'SaaS Client'],
-      link: 'https://github.com',
       accent: 'var(--accent-primary)'
     },
     {
       title: 'Attento Saúde do Trabalho',
       descKey: 'project_attento_desc',
+      image: attento,
       tags: ['HTML5', 'CSS3', 'JavaScript', 'SEO Engine', 'Tracking'],
       link: 'https://attento.med.br',
       accent: 'var(--accent-secondary)'
+    },
+    {
+      title: 'Canela Café',
+      descKey: 'project_canela_desc',
+      image: canelaCafe,
+      tags: ['React 19', 'Vite', 'Framer Motion', 'TypeScript'],
+      link: 'https://duuhrihedy.github.io/canela-cafe/',
+      accent: 'var(--accent-primary)'
+    },
+    {
+      title: 'Papelaria Lê Paiper',
+      descKey: 'project_lepaiper_desc',
+      image: lepaiper,
+      tags: ['Next.js 16', 'React 19', 'Prisma', 'SQLite', 'Tailwind'],
+      link: 'https://le-paiper-admin.vercel.app',
+      accent: 'var(--accent-secondary)'
+    },
+    {
+      title: 'Grupo Etarp',
+      descKey: 'project_etarp_desc',
+      image: etarp,
+      tags: ['React', 'Automação', 'Sistemas Customizados', 'Vite'],
+      link: 'https://duuhrihedy.github.io/etarp/',
+      accent: 'var(--accent-primary)'
+    },
+    {
+      title: 'Dorns Tracking Hub',
+      descKey: 'project_soon_desc',
+      image: soonImg,
+      tags: ['DevOps', 'Redirecionamento Pixel', 'Cloudflare Workers', 'GTM API'],
+      link: '#contact',
+      accent: 'var(--accent-secondary)',
+      isSoon: true
     }
   ];
 
@@ -52,57 +89,66 @@ export const Projects: React.FC<ProjectsProps> = ({ t }) => {
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '2.5rem',
-          marginTop: '1rem'
+          marginTop: '2rem'
         }} className="projects-grid">
           {projectsList.map((project, index) => (
             <div 
               key={index} 
-              className="glass-card" 
+              className="glass-card project-card" 
               style={{
                 display: 'flex',
                 flexDirection: 'column',
                 borderRadius: 'var(--radius-2xl)',
                 overflow: 'hidden',
                 height: '100%',
-                border: '1px solid var(--border-color)'
+                border: '1px solid var(--border-color)',
+                transition: 'all 0.35s ease',
+                position: 'relative'
               }}
             >
-              {/* Card visual top */}
+              {/* Card visual top with original premium images */}
               <div style={{
-                height: '160px',
-                background: `linear-gradient(135deg, ${project.accent}15, ${project.accent}05)`,
+                height: '220px',
+                position: 'relative',
+                overflow: 'hidden',
                 borderBottom: '1px solid var(--border-color)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                position: 'relative'
+                background: 'var(--bg-tertiary)'
               }}>
-                <div style={{
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: 'var(--radius-full)',
-                  background: 'var(--bg-primary)',
-                  border: `1px solid ${project.accent}`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: project.accent,
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
-                }}>
-                  <Layers size={24} />
-                </div>
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.5s ease'
+                  }}
+                  className="project-img"
+                />
                 <div style={{
                   position: 'absolute',
-                  top: '1rem',
-                  right: '1rem',
-                  fontSize: '10px',
-                  color: 'var(--text-muted)',
-                  textTransform: 'uppercase',
-                  fontWeight: 'var(--font-bold)',
-                  letterSpacing: '0.05em'
-                }}>
-                  Case study #{index + 1}
-                </div>
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(3, 7, 18, 0.4), transparent)',
+                  pointerEvents: 'none'
+                }} />
+                {project.isSoon && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '1rem',
+                    right: '1rem',
+                    background: 'var(--accent-primary)',
+                    color: 'white',
+                    fontSize: '10px',
+                    fontWeight: 'var(--font-bold)',
+                    padding: '0.3rem 0.8rem',
+                    borderRadius: 'var(--radius-full)',
+                    boxShadow: '0 4px 12px rgba(99, 102, 241, 0.3)',
+                    textTransform: 'uppercase'
+                  }}>
+                    {t('proj_soon') === 'proj_soon' ? 'Em Breve' : t('proj_soon')}
+                  </div>
+                )}
+
               </div>
 
               {/* Card body */}
@@ -162,7 +208,7 @@ export const Projects: React.FC<ProjectsProps> = ({ t }) => {
                 }}>
                   <a 
                     href={project.link} 
-                    target="_blank" 
+                    target={project.link.startsWith('#') ? '_self' : '_blank'} 
                     rel="noopener noreferrer"
                     style={{
                       display: 'flex',
@@ -175,7 +221,7 @@ export const Projects: React.FC<ProjectsProps> = ({ t }) => {
                     }}
                     className="project-link"
                   >
-                    <span>{t('project_cta_live')}</span>
+                    <span>{project.isSoon ? t('hero_cta_contact') : t('project_cta_live')}</span>
                     <ExternalLink size={14} />
                   </a>
                   <a 
@@ -205,6 +251,14 @@ export const Projects: React.FC<ProjectsProps> = ({ t }) => {
             grid-template-columns: 1fr !important;
             gap: 2rem !important;
           }
+        }
+        .project-card:hover {
+          transform: translateY(-6px);
+          border-color: var(--accent-primary) !important;
+          box-shadow: 0 12px 30px rgba(99, 102, 241, 0.1) !important;
+        }
+        .project-card:hover .project-img {
+          transform: scale(1.05);
         }
         .project-link:hover {
           color: var(--accent-primary) !important;

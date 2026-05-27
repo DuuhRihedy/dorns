@@ -119,7 +119,7 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
           color: 'var(--text-muted)'
         }} className="footer-bottom">
           <p>&copy; {currentYear} Dorns Tech Solutions. {t('footer_rights')}</p>
-          <p>{t('footer_developed')} <span>❤️</span> {t('footer_developed_by')}</p>
+          <p>{t('footer_signature')}</p>
         </div>
       </div>
 
@@ -146,14 +146,6 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
         }
         .footer-icon:hover {
           color: var(--accent-primary) !important;
-        }
-        .footer-bottom span {
-          color: #ef4444;
-          display: inline-block;
-          animation: beat 0.3s ease infinite alternate;
-        }
-        @keyframes beat {
-          to { transform: scale(1.15); }
         }
       `}</style>
     </footer>

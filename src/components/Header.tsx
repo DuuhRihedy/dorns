@@ -58,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, theme, toggleThem
           color: 'var(--text-primary)'
         }}>
           <img src={logo} alt="Dorns Tech" style={{ width: '32px', height: '32px', borderRadius: 'var(--radius-md)', objectFit: 'cover', border: '1px solid var(--border-color)' }} />
-          <span>Dorns<span style={{ background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>.Tech</span></span>
+          <span>&lt;Dorns<span style={{ background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>.tech</span>&gt;</span>
         </a>
 
         {/* DESKTOP NAVIGATION */}
