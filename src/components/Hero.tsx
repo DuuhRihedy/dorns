@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, MessageSquare, Mail, Laptop } from 'lucide-react';
+import { ArrowRight, MessageSquare, Mail } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 interface HeroProps {
   t: (key: string) => string;
@@ -225,14 +226,15 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
                 width: '64px',
                 height: '64px',
                 borderRadius: 'var(--radius-xl)',
-                background: 'var(--accent-gradient)',
+                background: 'var(--bg-primary)',
+                border: '1px solid var(--border-color)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#fff',
-                boxShadow: '0 10px 20px rgba(99, 102, 241, 0.4)'
+                overflow: 'hidden',
+                boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)'
               }}>
-                <Laptop size={32} />
+                <img src={logo} alt="Dorns Tech Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div>
                 <h3 style={{ fontSize: 'var(--text-xl)', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>

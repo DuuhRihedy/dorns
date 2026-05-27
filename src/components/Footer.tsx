@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, Code2 } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 interface FooterProps {
   t: (key: string) => string;
@@ -36,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
             fontWeight: 'var(--font-bold)',
             color: 'var(--text-primary)'
           }}>
-            <Code2 style={{ color: 'var(--accent-primary)', width: '24px', height: '24px' }} />
+            <img src={logo} alt="Dorns Tech" style={{ width: '24px', height: '24px', borderRadius: 'var(--radius-sm)', objectFit: 'cover', border: '1px solid var(--border-color)' }} />
             <span>Dorns<span style={{ background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>.Tech</span></span>
           </a>
 

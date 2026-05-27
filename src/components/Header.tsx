@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, Globe, Menu, X, Code2 } from 'lucide-react';
+import { Moon, Sun, Globe, Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 interface HeaderProps {
   lang: 'pt' | 'en';
@@ -51,12 +52,12 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, theme, toggleThem
         <a href="#hero" style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '0.5rem',
+          gap: '0.65rem',
           fontSize: 'var(--text-xl)',
           fontWeight: 'var(--font-bold)',
           color: 'var(--text-primary)'
         }}>
-          <Code2 style={{ color: 'var(--accent-primary)', width: '28px', height: '28px' }} />
+          <img src={logo} alt="Dorns Tech" style={{ width: '32px', height: '32px', borderRadius: 'var(--radius-md)', objectFit: 'cover', border: '1px solid var(--border-color)' }} />
           <span>Dorns<span style={{ background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>.Tech</span></span>
         </a>
 
